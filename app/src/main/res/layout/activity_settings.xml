@@ -13,7 +13,25 @@
         android:layout_height="wrap_content"
         android:text="Настройки"
         android:textColor="?android:attr/textColor"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="20dp"
         android:layout_gravity="center"
+        tools:ignore="MissingConstraints" />
+
+    <Spinner
+        android:id="@+id/themeSelector"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:spinnerMode="dropdown"
+        android:background="@android:drawable/btn_dropdown"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="200dp"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

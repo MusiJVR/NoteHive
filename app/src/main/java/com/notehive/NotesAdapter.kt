@@ -1,5 +1,6 @@
 package com.notehive
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,6 +25,15 @@ class NotesAdapter(private val notes: List<Note>) : RecyclerView.Adapter<NotesAd
         holder.title.text = note.title
         holder.content.text = note.content
         holder.timestamp.text = note.timestamp
+
+        holder.itemView.setOnClickListener {
+            val intent = Intent(holder.itemView.context, NoteActivity::class.java).apply {
+                putExtra("NOTE_ID", note.id)
+                putExtra("NOTE_TITLE", note.title)
+                putExtra("NOTE_CONTENT", note.content)
+            }
+            holder.itemView.context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int = notes.size

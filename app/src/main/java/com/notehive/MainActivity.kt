@@ -1,6 +1,8 @@
 package com.notehive
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -20,5 +22,21 @@ class MainActivity : AppCompatActivity() {
         )
 
         recyclerView.adapter = NotesAdapter(sampleNotes)
+
+        val archiveButton: ImageButton = findViewById(R.id.archiveButton)
+        val addNoteButton: ImageButton = findViewById(R.id.addNoteButton)
+        val settingsButton: ImageButton = findViewById(R.id.settingsButton)
+        archiveButton.setOnClickListener {
+            val intent = Intent(this, ArchiveActivity::class.java)
+            startActivity(intent)
+        }
+        addNoteButton.setOnClickListener {
+            val intent = Intent(this, NoteActivity::class.java)
+            startActivity(intent)
+        }
+        settingsButton.setOnClickListener {
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

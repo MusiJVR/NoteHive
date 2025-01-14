@@ -3,6 +3,7 @@
     <declare-styleable name="CustomAttrs">
         <attr name="backgroundColor" format="color" />
         <attr name="noteBackground" format="color" />
+        <attr name="textColorDarker" format="color" />
         <attr name="secondaryTextColor" format="color" />
     </declare-styleable>
 </resources>

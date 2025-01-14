@@ -4,6 +4,8 @@
         <item name="backgroundColor">@color/black</item>
         <item name="noteBackground">@color/dark_grey</item>
         <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">@color/grey</item>
+        <item name="textColorDarker">@color/dark_grey</item>
         <item name="secondaryTextColor">@color/grey</item>
         <item name="cardBackgroundColor">@color/dark_grey</item>
     </style>

@@ -1,6 +1,5 @@
 package com.notehive
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
@@ -44,12 +43,8 @@ class SettingsActivity : AppCompatActivity() {
                 if (ThemeManager.getCurrentTheme(this@SettingsActivity) != selectedTheme) {
                     ThemeManager.saveTheme(this@SettingsActivity, selectedTheme)
 
-                    val mainActivity = Intent(this@SettingsActivity, MainActivity::class.java)
-                    mainActivity.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                    startActivity(mainActivity)
-
-                    finish()
-                    startActivity(intent)
+                    MainActivity.instance?.recreate()
+                    recreate()
                 }
             }
 

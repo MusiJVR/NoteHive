@@ -61,7 +61,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="?attr/backgroundColor" />
+        android:background="?attr/viewSeparator" />
 
     <EditText
         android:id="@+id/noteContent"
@@ -70,7 +70,7 @@
         android:layout_weight="1"
         android:hint="Введите текст заметки..."
         android:textColor="?android:attr/textColor"
-        android:textColorHint="?attr/textColorDarker"
+        android:textColorHint="?attr/textColorContent"
         android:gravity="start|top"
         android:background="@android:color/transparent"
         android:textSize="16sp"

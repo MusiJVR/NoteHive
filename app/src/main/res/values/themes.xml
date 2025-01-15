@@ -4,26 +4,57 @@
     <style name="Base.Theme.NoteHive" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="backgroundColor">@color/black</item>
         <item name="noteBackground">@color/dark_grey</item>
+        <item name="sideButtonColor">@color/dark_charcoal</item>
+        <item name="centralButtonColor">@color/davys_grey</item>
+        <item name="viewSeparator">@color/dark_grey</item>
+        <item name="android:fillColor">@color/default_ic</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:textColorHint">@color/grey</item>
-        <item name="textColorDarker">@color/dark_grey</item>
+        <item name="textColorContent">@color/dark_grey</item>
         <item name="secondaryTextColor">@color/grey</item>
         <item name="cardBackgroundColor">@color/dark_grey</item>
     </style>
 
     <style name="Theme.NoteHive.Light" parent="Base.Theme.NoteHive">
         <item name="backgroundColor">@color/white</item>
+        <item name="noteBackground">@color/cultured</item>
+        <item name="sideButtonColor">@color/bright_gray</item>
+        <item name="centralButtonColor">@color/chinese_white</item>
+        <item name="viewSeparator">@color/bright_gray</item>
+        <item name="android:fillColor">@color/black</item>
         <item name="android:textColor">@color/black</item>
+        <item name="android:textColorHint">@color/chinese_white</item>
+        <item name="textColorContent">@color/chinese_white</item>
+        <item name="secondaryTextColor">@color/grey</item>
+        <item name="cardBackgroundColor">@color/dark_grey</item>
     </style>
 
     <style name="Theme.NoteHive.Dark" parent="Base.Theme.NoteHive">
         <item name="backgroundColor">@color/black</item>
+        <item name="noteBackground">@color/dark_grey</item>
+        <item name="sideButtonColor">@color/dark_charcoal</item>
+        <item name="centralButtonColor">@color/davys_grey</item>
+        <item name="viewSeparator">@color/dark_grey</item>
+        <item name="android:fillColor">@color/default_ic</item>
         <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">@color/grey</item>
+        <item name="textColorContent">@color/dark_grey</item>
+        <item name="secondaryTextColor">@color/grey</item>
+        <item name="cardBackgroundColor">@color/dark_grey</item>
     </style>
 
     <style name="Theme.NoteHive.Green" parent="Base.Theme.NoteHive">
-        <item name="backgroundColor">@color/green</item>
+        <item name="backgroundColor">@color/olive_drab</item>
+        <item name="noteBackground">@color/kombu_green</item>
+        <item name="sideButtonColor">@color/black_сhocolate</item>
+        <item name="centralButtonColor">@color/pine_tree</item>
+        <item name="viewSeparator">@color/grey</item>
+        <item name="android:fillColor">@color/default_ic</item>
         <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">@color/bright_gray</item>
+        <item name="textColorContent">@color/bright_gray</item>
+        <item name="secondaryTextColor">@color/chinese_white</item>
+        <item name="cardBackgroundColor">@color/dark_grey</item>
     </style>
 
 </resources>

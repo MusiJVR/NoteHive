@@ -1,4 +1,4 @@
-package com.notehive
+package com.notehive.util
 
 data class ThemeItem(
     val name: String,

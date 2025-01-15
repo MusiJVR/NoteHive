@@ -1,10 +1,13 @@
-package com.notehive
+package com.notehive.activity
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import com.notehive.util.LanguageManager
+import com.notehive.R
+import com.notehive.util.ThemeManager
 
 class SettingsActivity : AppCompatActivity() {
     companion object {

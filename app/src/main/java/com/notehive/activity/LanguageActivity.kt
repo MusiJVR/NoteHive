@@ -1,10 +1,14 @@
-package com.notehive
+package com.notehive.activity
 
 import android.os.Bundle
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.notehive.util.LanguageAdapter
+import com.notehive.util.LanguageManager
+import com.notehive.R
+import com.notehive.util.ThemeManager
 
 class LanguageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

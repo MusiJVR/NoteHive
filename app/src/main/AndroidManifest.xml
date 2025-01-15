@@ -14,18 +14,18 @@
         android:theme="@style/Theme.NoteHive.Light"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".NoteActivity" />
-        <activity android:name=".ArchiveActivity" />
-        <activity android:name=".SettingsActivity" />
-        <activity android:name=".ThemeActivity" />
-        <activity android:name=".LanguageActivity" />
+        <activity android:name=".activity.NoteActivity" />
+        <activity android:name=".activity.ArchiveActivity" />
+        <activity android:name=".activity.SettingsActivity" />
+        <activity android:name=".activity.ThemeActivity" />
+        <activity android:name=".activity.LanguageActivity" />
     </application>
 
 </manifest>

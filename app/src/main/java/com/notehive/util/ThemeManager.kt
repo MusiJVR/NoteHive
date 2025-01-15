@@ -1,7 +1,8 @@
-package com.notehive
+package com.notehive.util
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.notehive.R
 
 object ThemeManager {
     private const val PREFS_NAME = "user_preferences"

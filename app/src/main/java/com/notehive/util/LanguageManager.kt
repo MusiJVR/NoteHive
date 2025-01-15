@@ -1,4 +1,4 @@
-package com.notehive
+package com.notehive.util
 
 import android.content.Context
 import android.content.SharedPreferences

@@ -1,4 +1,4 @@
-package com.notehive
+package com.notehive.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,10 @@ import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.notehive.util.LanguageManager
+import com.notehive.util.Note
+import com.notehive.R
+import com.notehive.util.ThemeManager
 
 class MainActivity : AppCompatActivity() {
     companion object {

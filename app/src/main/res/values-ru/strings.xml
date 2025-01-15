@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">NoteHive</string>
+    <string name="archive">Архив</string>
+    <string name="add_note">Создать заметку</string>
+    <string name="settings">Настройки</string>
+    <string name="theme">Тема</string>
+    <string name="language">Язык</string>
+    <string name="back">Назад</string>
+    <string name="note_title">Заголовок</string>
+    <string name="share">Поделиться</string>
+    <string name="enter_text">Введите текст заметки...</string>
+    <string name="note_text">Текст...</string>
+    <string name="language_english">Английский</string>
+    <string name="language_russian">Русский</string>
+    <string name="language_german">Немецкий</string>
+    <string name="language_french">Французский</string>
+    <string name="language_spanish">Испанский</string>
+</resources>

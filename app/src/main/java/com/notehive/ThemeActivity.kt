@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class ThemeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        LanguageManager.applyLanguage(this)
         ThemeManager.applyTheme(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_theme)

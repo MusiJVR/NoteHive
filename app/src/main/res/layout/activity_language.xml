@@ -43,6 +43,11 @@
             android:background="?attr/viewSeparator"
             android:layout_marginBottom="16dp" />
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/languageRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
     </LinearLayout>
 
 </ScrollView>

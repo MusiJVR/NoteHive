@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">NoteHive</string>
+    <string name="archive">Archivo</string>
+    <string name="add_note">Crear nota</string>
+    <string name="settings">Configuración</string>
+    <string name="theme">Tema</string>
+    <string name="language">Idioma</string>
+    <string name="back">Atrás</string>
+    <string name="note_title">Título</string>
+    <string name="share">Compartir</string>
+    <string name="enter_text">Ingrese el texto de la nota...</string>
+    <string name="note_text">Texto...</string>
+    <string name="language_english">Inglés</string>
+    <string name="language_russian">Ruso</string>
+    <string name="language_german">Alemán</string>
+    <string name="language_french">Francés</string>
+    <string name="language_spanish">Español</string>
+</resources>

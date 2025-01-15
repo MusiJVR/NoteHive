@@ -24,6 +24,8 @@
         <activity android:name=".NoteActivity" />
         <activity android:name=".ArchiveActivity" />
         <activity android:name=".SettingsActivity" />
+        <activity android:name=".ThemeActivity" />
+        <activity android:name=".LanguageActivity" />
     </application>
 
 </manifest>

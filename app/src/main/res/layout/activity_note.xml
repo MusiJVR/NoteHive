@@ -22,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
-            android:contentDescription="Назад"
+            android:contentDescription="@string/back"
             android:src="@drawable/ic_back" />
 
         <EditText
@@ -32,7 +32,7 @@
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:ellipsize="end"
-            android:hint="Название заметки"
+            android:hint="@string/note_title"
             android:maxLength="256"
             android:padding="8dp"
             android:singleLine="true"
@@ -45,7 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
-            android:contentDescription="Поделиться"
+            android:contentDescription="@string/share"
             android:src="@drawable/ic_share" />
 
         <ImageButton
@@ -68,7 +68,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:hint="Введите текст заметки..."
+        android:hint="@string/enter_text"
         android:textColor="?android:attr/textColor"
         android:textColorHint="?attr/textColorContent"
         android:gravity="start|top"

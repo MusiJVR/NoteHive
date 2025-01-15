@@ -11,7 +11,7 @@
         android:id="@+id/archivePlaceholder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Архив заметок"
+        android:text="@string/archive"
         android:textColor="?android:attr/textColor"
         android:layout_gravity="center"
         tools:ignore="MissingConstraints" />

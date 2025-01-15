@@ -1,54 +1,33 @@
 package com.notehive
 
+import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import android.widget.AdapterView
-import android.widget.Spinner
-import android.widget.ArrayAdapter
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 
 class SettingsActivity : AppCompatActivity() {
+    companion object {
+        var instance: SettingsActivity? = null
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        instance = this
         ThemeManager.applyTheme(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
 
-        val themeSpinner: Spinner = findViewById(R.id.themeSelector)
-        val themes = listOf("Light", "Dark", "Green")
+        val backButton: ImageButton = findViewById(R.id.backButton)
+        backButton.setOnClickListener {
+            finish()
+        }
 
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, themes)
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        themeSpinner.adapter = adapter
+        findViewById<CardView>(R.id.cardTheme).setOnClickListener {
+            startActivity(Intent(this, ThemeActivity::class.java))
+        }
 
-        val currentTheme = ThemeManager.getCurrentTheme(this)
-        themeSpinner.setSelection(
-            when (currentTheme) {
-                ThemeManager.THEME_LIGHT -> 0
-                ThemeManager.THEME_DARK -> 1
-                ThemeManager.THEME_GREEN -> 2
-                else -> 0
-            }
-        )
-
-        themeSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(
-                parent: AdapterView<*>, view: View?, position: Int, id: Long
-            ) {
-                val selectedTheme = when (position) {
-                    0 -> ThemeManager.THEME_LIGHT
-                    1 -> ThemeManager.THEME_DARK
-                    2 -> ThemeManager.THEME_GREEN
-                    else -> ThemeManager.THEME_LIGHT
-                }
-                if (ThemeManager.getCurrentTheme(this@SettingsActivity) != selectedTheme) {
-                    ThemeManager.saveTheme(this@SettingsActivity, selectedTheme)
-
-                    MainActivity.instance?.recreate()
-                    recreate()
-                }
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>) {}
+        findViewById<CardView>(R.id.cardLanguage).setOnClickListener {
+            startActivity(Intent(this, LanguageActivity::class.java))
         }
     }
 }

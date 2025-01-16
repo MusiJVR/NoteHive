@@ -7,7 +7,9 @@
     <string name="language">Idioma</string>
     <string name="back">Atrás</string>
     <string name="note_title">Título</string>
-    <string name="share">Compartir</string>
+    <string name="menu">Menú</string>
+    <string name="pin">Alfiler</string>
+    <string name="delete">Borrar</string>
     <string name="enter_text">Ingrese el texto de la nota...</string>
     <string name="note_text">Texto...</string>
     <string name="language_english">Inglés</string>

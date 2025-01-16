@@ -7,8 +7,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.notehive.util.LanguageManager
-import com.notehive.util.Note
 import com.notehive.R
+import com.notehive.note.NoteDatabase
+import com.notehive.note.NotesAdapter
 import com.notehive.util.ThemeManager
 
 class MainActivity : AppCompatActivity() {
@@ -26,13 +27,11 @@ class MainActivity : AppCompatActivity() {
         val recyclerView: RecyclerView = findViewById(R.id.notesRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        val sampleNotes = listOf(
-            Note(1, "Первая заметка", "Текст", "12:00 01 Jan 2025"),
-            Note(2, "Вторая заметка", "Текст", "13:00 01 Jan 2025"),
-            Note(3, "Третья заметка", "Текст", "14:00 01 Jan 2025")
-        )
+        val noteDao = NoteDatabase.getDatabase(this).noteDao()
 
-        recyclerView.adapter = NotesAdapter(sampleNotes)
+        noteDao.getAllNotes().observe(this) { notes ->
+            recyclerView.adapter = NotesAdapter(notes)
+        }
 
         val archiveButton: ImageButton = findViewById(R.id.archiveButton)
         val addNoteButton: ImageButton = findViewById(R.id.addNoteButton)

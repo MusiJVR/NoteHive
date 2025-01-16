@@ -1,4 +1,4 @@
-package com.notehive.activity
+package com.notehive.note
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.notehive.util.Note
 import com.notehive.R
+import com.notehive.activity.NoteActivity
+import org.threeten.bp.LocalDateTime
+import org.threeten.bp.format.DateTimeFormatter
 
 class NotesAdapter(private val notes: List<Note>) : RecyclerView.Adapter<NotesAdapter.NoteViewHolder>() {
 
@@ -26,7 +28,10 @@ class NotesAdapter(private val notes: List<Note>) : RecyclerView.Adapter<NotesAd
         val note = notes[position]
         holder.title.text = note.title
         holder.content.text = note.content
-        holder.timestamp.text = note.timestamp
+
+        val formatter = DateTimeFormatter.ofPattern("HH:mm dd-MM-yyyy")
+        val formattedTimestamp = LocalDateTime.parse(note.timestamp).format(formatter)
+        holder.timestamp.text = formattedTimestamp
 
         holder.itemView.setOnClickListener {
             val intent = Intent(holder.itemView.context, NoteActivity::class.java).apply {

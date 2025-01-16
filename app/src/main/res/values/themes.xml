@@ -4,6 +4,7 @@
     <style name="Base.Theme.NoteHive" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="backgroundColor">@color/black</item>
         <item name="noteBackground">@color/dark_grey</item>
+        <item name="android:itemBackground">?attr/noteBackground</item>
         <item name="sideButtonColor">@color/dark_charcoal</item>
         <item name="centralButtonColor">@color/davys_grey</item>
         <item name="viewSeparator">@color/dark_grey</item>
@@ -18,6 +19,7 @@
     <style name="Theme.NoteHive.Light" parent="Base.Theme.NoteHive">
         <item name="backgroundColor">@color/white</item>
         <item name="noteBackground">@color/cultured</item>
+        <item name="android:itemBackground">?attr/noteBackground</item>
         <item name="sideButtonColor">@color/bright_gray</item>
         <item name="centralButtonColor">@color/chinese_white</item>
         <item name="viewSeparator">@color/bright_gray</item>
@@ -32,6 +34,7 @@
     <style name="Theme.NoteHive.Dark" parent="Base.Theme.NoteHive">
         <item name="backgroundColor">@color/black</item>
         <item name="noteBackground">@color/dark_grey</item>
+        <item name="android:itemBackground">?attr/noteBackground</item>
         <item name="sideButtonColor">@color/dark_charcoal</item>
         <item name="centralButtonColor">@color/davys_grey</item>
         <item name="viewSeparator">@color/dark_grey</item>
@@ -46,6 +49,7 @@
     <style name="Theme.NoteHive.Green" parent="Base.Theme.NoteHive">
         <item name="backgroundColor">@color/olive_drab</item>
         <item name="noteBackground">@color/kombu_green</item>
+        <item name="android:itemBackground">?attr/noteBackground</item>
         <item name="sideButtonColor">@color/black_сhocolate</item>
         <item name="centralButtonColor">@color/pine_tree</item>
         <item name="viewSeparator">@color/grey</item>

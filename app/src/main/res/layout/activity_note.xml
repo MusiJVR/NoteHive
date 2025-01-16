@@ -33,7 +33,7 @@
             android:background="@android:color/transparent"
             android:ellipsize="end"
             android:hint="@string/note_title"
-            android:maxLength="256"
+            android:maxLength="25"
             android:padding="8dp"
             android:singleLine="true"
             android:textColor="?android:attr/textColor"
@@ -41,19 +41,11 @@
             android:textSize="18sp" />
 
         <ImageButton
-            android:id="@+id/shareButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:contentDescription="@string/share"
-            android:src="@drawable/ic_share" />
-
-        <ImageButton
             android:id="@+id/moreButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
-            android:contentDescription="Меню"
+            android:contentDescription="@string/menu"
             android:src="@drawable/ic_more" />
 
     </LinearLayout>

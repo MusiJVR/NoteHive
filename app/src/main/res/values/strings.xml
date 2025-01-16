@@ -7,7 +7,9 @@
     <string name="language">Language</string>
     <string name="back">Back</string>
     <string name="note_title">Title</string>
-    <string name="share">Share</string>
+    <string name="menu">Menu</string>
+    <string name="pin">Pin</string>
+    <string name="delete">Delete</string>
     <string name="enter_text">Enter the text of the note...</string>
     <string name="note_text">Text...</string>
     <string name="language_english">English</string>

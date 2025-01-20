@@ -8,8 +8,11 @@ interface NoteDao {
     @Query("SELECT * FROM notes ORDER BY timestamp DESC")
     fun getAllNotes(): LiveData<List<Note>>
 
-    @Query("SELECT COUNT(*) FROM notes")
-    fun getNoteCount(): Int
+    @Query("SELECT * FROM notes WHERE archived = 1 ORDER BY timestamp DESC")
+    fun getAllNotesInArchive(): LiveData<List<Note>>
+
+    @Query("SELECT * FROM notes WHERE archived = 0 ORDER BY timestamp DESC")
+    fun getAllNotesNotInArchive(): LiveData<List<Note>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertOrUpdate(note: Note)

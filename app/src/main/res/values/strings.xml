@@ -9,6 +9,8 @@
     <string name="note_title">Title</string>
     <string name="menu">Menu</string>
     <string name="pin">Pin</string>
+    <string name="add_to_archive">Add to archive</string>
+    <string name="remove_from_archive">Remove from archive</string>
     <string name="delete">Delete</string>
     <string name="enter_text">Enter the text of the note...</string>
     <string name="note_text">Text...</string>

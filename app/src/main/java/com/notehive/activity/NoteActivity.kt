@@ -14,7 +14,6 @@ import com.notehive.util.ThemeManager
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 import org.threeten.bp.LocalDateTime
 import org.threeten.bp.format.DateTimeFormatter
 
@@ -33,11 +32,12 @@ class NoteActivity : AppCompatActivity() {
         contentView = findViewById(R.id.noteContent)
 
         val noteId = intent.getLongExtra("NOTE_ID", -1)
+        val noteArchived = intent.getBooleanExtra("NOTE_ARCHIVED", false)
         val noteTitle = intent.getStringExtra("NOTE_TITLE") ?: ""
         val noteContent = intent.getStringExtra("NOTE_CONTENT") ?: ""
 
         originalNote = if (noteId != -1L) {
-            Note(noteId, noteTitle, noteContent, "")
+            Note(noteId, noteArchived, noteTitle, noteContent, "")
         } else null
 
         titleView.text = noteTitle
@@ -52,10 +52,21 @@ class NoteActivity : AppCompatActivity() {
 
             menuInflater.inflate(R.menu.more_menu, popupMenu.menu)
 
+            val archiveMenuItem = popupMenu.menu.findItem(R.id.action_add_to_archive)
+            archiveMenuItem.title = if (originalNote?.archived == true) {
+                getString(R.string.remove_from_archive)
+            } else {
+                getString(R.string.add_to_archive)
+            }
+
             popupMenu.setOnMenuItemClickListener { item ->
                 when (item.itemId) {
                     R.id.action_pin -> {
                         Toast.makeText(this, "Note pinned", Toast.LENGTH_SHORT).show()
+                        true
+                    }
+                    R.id.action_add_to_archive -> {
+                        toggleArchiveState()
                         true
                     }
                     R.id.action_delete -> {
@@ -70,25 +81,38 @@ class NoteActivity : AppCompatActivity() {
         }
     }
 
+    private fun toggleArchiveState() {
+        originalNote?.let { note ->
+            val newArchivedState = !note.archived
+            val updatedNote = note.copy(archived = newArchivedState)
+
+            CoroutineScope(Dispatchers.IO).launch {
+                val noteDao = NoteDatabase.getDatabase(this@NoteActivity).noteDao()
+                noteDao.insertOrUpdate(updatedNote)
+            }
+
+            originalNote = updatedNote
+            invalidateOptionsMenu()
+
+            Toast.makeText(this, if (originalNote?.archived == true) "Note archived" else "Note unarchived", Toast.LENGTH_SHORT).show()
+        }
+    }
+
     private fun finishWithSave() {
         var title = titleView.text.toString().trim()
         val content = contentView.text.toString().trim()
 
-        if (title.isEmpty() && content.isEmpty()) {
-            finish()
-            return
-        }
-
         if (title.isEmpty()) {
-            val noteDao = NoteDatabase.getDatabase(this).noteDao()
-            val count = runBlocking(Dispatchers.IO) {
-                noteDao.getNoteCount()
+            if (content.isEmpty()) {
+                finish()
+                return
             }
-            title = "Note-${count + 1}"
+            title = "Note"
         }
 
         val currentNote = Note(
             id = originalNote?.id ?: 0,
+            archived = originalNote?.archived ?: false,
             title = title,
             content = content,
             timestamp = LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME)

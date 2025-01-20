@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
         val noteDao = NoteDatabase.getDatabase(this).noteDao()
 
-        noteDao.getAllNotes().observe(this) { notes ->
+        noteDao.getAllNotesNotInArchive().observe(this) { notes ->
             recyclerView.adapter = NotesAdapter(notes)
         }
 

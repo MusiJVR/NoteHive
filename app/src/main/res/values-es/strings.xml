@@ -9,6 +9,8 @@
     <string name="note_title">Título</string>
     <string name="menu">Menú</string>
     <string name="pin">Alfiler</string>
+    <string name="add_to_archive">Añadir al archivo</string>
+    <string name="remove_from_archive">Eliminar del archivo</string>
     <string name="delete">Borrar</string>
     <string name="enter_text">Ingrese el texto de la nota...</string>
     <string name="note_text">Texto...</string>

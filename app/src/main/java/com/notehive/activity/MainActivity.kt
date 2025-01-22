@@ -47,28 +47,26 @@ class MainActivity : AppCompatActivity() {
                         invalidateOptionsMenu()
                         Toast.makeText(
                             this,
-                            if (updatedNote.pinned) "Note pinned" else "Note unpinned",
+                            if (updatedNote.pinned) R.string.note_pinned else R.string.note_unpinned,
                             Toast.LENGTH_SHORT
                         ).show()
                     },
                     onArchiveToggled = { updatedNote ->
                         CoroutineScope(Dispatchers.IO).launch {
-                            val noteDao = NoteDatabase.getDatabase(this@MainActivity).noteDao()
-                            noteDao.insertOrUpdate(updatedNote)
+                            NoteDatabase.getDatabase(this@MainActivity).noteDao().insertOrUpdate(updatedNote)
                         }
                         invalidateOptionsMenu()
                         Toast.makeText(
                             this,
-                            if (updatedNote.archived) "Note archived" else "Note unarchived",
+                            if (updatedNote.archived) R.string.note_archived else R.string.note_unarchived,
                             Toast.LENGTH_SHORT
                         ).show()
                     },
                     onDelete = {
                         CoroutineScope(Dispatchers.IO).launch {
-                            val noteDao = NoteDatabase.getDatabase(this@MainActivity).noteDao()
-                            noteDao.delete(note)
+                            NoteDatabase.getDatabase(this@MainActivity).noteDao().delete(note)
                         }
-                        Toast.makeText(this, "Note deleted", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, R.string.note_deleted, Toast.LENGTH_SHORT).show()
                     }
                 )
             }

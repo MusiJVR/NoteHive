@@ -61,7 +61,7 @@ class NoteActivity : AppCompatActivity() {
                     invalidateOptionsMenu()
                     Toast.makeText(
                         this,
-                        if (originalNote?.pinned == true) "Note pinned" else "Note unpinned",
+                        if (originalNote?.pinned == true) R.string.note_pinned else R.string.note_unpinned,
                         Toast.LENGTH_SHORT
                     ).show()
                 },
@@ -73,7 +73,7 @@ class NoteActivity : AppCompatActivity() {
                     invalidateOptionsMenu()
                     Toast.makeText(
                         this,
-                        if (originalNote?.archived == true) "Note archived" else "Note unarchived",
+                        if (originalNote?.archived == true) R.string.note_archived else R.string.note_unarchived,
                         Toast.LENGTH_SHORT
                     ).show()
                 },
@@ -82,7 +82,7 @@ class NoteActivity : AppCompatActivity() {
                         CoroutineScope(Dispatchers.IO).launch {
                             NoteDatabase.getDatabase(this@NoteActivity).noteDao().delete(note)
                         }
-                        Toast.makeText(this, "Note deleted", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, R.string.note_deleted, Toast.LENGTH_SHORT).show()
                         finish()
                     }
                 }

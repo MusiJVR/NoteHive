@@ -15,6 +15,12 @@
     <string name="delete">Удалить</string>
     <string name="enter_text">Введите текст заметки...</string>
     <string name="note_text">Текст...</string>
+    <string name="note_date">Дата</string>
+    <string name="note_pinned">Заметка закреплена</string>
+    <string name="note_unpinned">Заметка откреплена</string>
+    <string name="note_archived">Заметка добавлена в архив</string>
+    <string name="note_unarchived">Заметка убрана из архива</string>
+    <string name="note_deleted">Заметка удалена</string>
     <string name="language_english">Английский</string>
     <string name="language_russian">Русский</string>
     <string name="language_german">Немецкий</string>

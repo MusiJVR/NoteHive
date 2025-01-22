@@ -15,6 +15,12 @@
     <string name="delete">Supprimer</string>
     <string name="enter_text">Entrez le texte de la note...</string>
     <string name="note_text">Texte...</string>
+    <string name="note_date">Date</string>
+    <string name="note_pinned">Note épinglée</string>
+    <string name="note_unpinned">Note non épinglée</string>
+    <string name="note_archived">Note ajoutée à l\'archive</string>
+    <string name="note_unarchived">Note retirée de l\'archive</string>
+    <string name="note_deleted">Note supprimée</string>
     <string name="language_english">Anglais</string>
     <string name="language_russian">Russe</string>
     <string name="language_german">Allemand</string>

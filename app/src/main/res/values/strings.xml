@@ -15,6 +15,12 @@
     <string name="delete">Delete</string>
     <string name="enter_text">Enter the text of the note...</string>
     <string name="note_text">Text...</string>
+    <string name="note_date">Date</string>
+    <string name="note_pinned">Note pinned</string>
+    <string name="note_unpinned">Note unpinned</string>
+    <string name="note_archived">Note add to archive</string>
+    <string name="note_unarchived">Note remove from archive</string>
+    <string name="note_deleted">Note deleted</string>
     <string name="language_english">English</string>
     <string name="language_russian">Russian</string>
     <string name="language_german">German</string>

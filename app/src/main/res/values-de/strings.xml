@@ -15,6 +15,12 @@
     <string name="delete">Löschen</string>
     <string name="enter_text">Geben Sie den Text der Notiz ein...</string>
     <string name="note_text">Text...</string>
+    <string name="note_date">Datum</string>
+    <string name="note_pinned">Notiz angeheftet</string>
+    <string name="note_unpinned">Notiz nicht angeheftet</string>
+    <string name="note_archived">Notiz zum Archiv hinzugefügt</string>
+    <string name="note_unarchived">Notiz aus dem Archiv entfernt</string>
+    <string name="note_deleted">Notiz gelöscht</string>
     <string name="language_english">Englisch</string>
     <string name="language_russian">Russisch</string>
     <string name="language_german">Deutsch</string>

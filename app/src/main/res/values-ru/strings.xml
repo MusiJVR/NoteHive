@@ -9,6 +9,7 @@
     <string name="note_title">Заголовок</string>
     <string name="menu">Меню</string>
     <string name="pin">Закрепить</string>
+    <string name="unpin">Открепить</string>
     <string name="add_to_archive">Добавить в архив</string>
     <string name="remove_from_archive">Убрать из архива</string>
     <string name="delete">Удалить</string>

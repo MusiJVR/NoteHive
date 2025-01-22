@@ -32,12 +32,13 @@ class NoteActivity : AppCompatActivity() {
         contentView = findViewById(R.id.noteContent)
 
         val noteId = intent.getLongExtra("NOTE_ID", -1)
+        val notePinned = intent.getBooleanExtra("NOTE_PINNED", false)
         val noteArchived = intent.getBooleanExtra("NOTE_ARCHIVED", false)
         val noteTitle = intent.getStringExtra("NOTE_TITLE") ?: ""
         val noteContent = intent.getStringExtra("NOTE_CONTENT") ?: ""
 
         originalNote = if (noteId != -1L) {
-            Note(noteId, noteArchived, noteTitle, noteContent, "")
+            Note(noteId, notePinned, noteArchived, noteTitle, noteContent, "")
         } else null
 
         titleView.text = noteTitle
@@ -52,6 +53,18 @@ class NoteActivity : AppCompatActivity() {
                 context = this,
                 anchor = view,
                 note = originalNote,
+                onPinnedToggled = { updatedNote ->
+                    originalNote = updatedNote
+                    CoroutineScope(Dispatchers.IO).launch {
+                        NoteDatabase.getDatabase(this@NoteActivity).noteDao().insertOrUpdate(updatedNote)
+                    }
+                    invalidateOptionsMenu()
+                    Toast.makeText(
+                        this,
+                        if (originalNote?.pinned == true) "Note pinned" else "Note unpinned",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                },
                 onArchiveToggled = { updatedNote ->
                     originalNote = updatedNote
                     CoroutineScope(Dispatchers.IO).launch {
@@ -91,6 +104,7 @@ class NoteActivity : AppCompatActivity() {
 
         val currentNote = Note(
             id = originalNote?.id ?: 0,
+            pinned = originalNote?.pinned ?: false,
             archived = originalNote?.archived ?: false,
             title = title,
             content = content,

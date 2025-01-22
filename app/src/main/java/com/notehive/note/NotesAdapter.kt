@@ -4,6 +4,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.notehive.R
@@ -20,6 +21,7 @@ class NotesAdapter(
         val title: TextView = itemView.findViewById(R.id.noteTitle)
         val content: TextView = itemView.findViewById(R.id.noteContentPreview)
         val timestamp: TextView = itemView.findViewById(R.id.noteTimestamp)
+        val pinIcon: ImageView = itemView.findViewById(R.id.pinIcon)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
@@ -32,6 +34,12 @@ class NotesAdapter(
         holder.title.text = note.title
         holder.content.text = note.content
 
+        if (note.pinned) {
+            holder.pinIcon.visibility = View.VISIBLE
+        } else {
+            holder.pinIcon.visibility = View.GONE
+        }
+
         val formatter = DateTimeFormatter.ofPattern("HH:mm dd-MM-yyyy")
         val formattedTimestamp = LocalDateTime.parse(note.timestamp).format(formatter)
         holder.timestamp.text = formattedTimestamp
@@ -39,6 +47,7 @@ class NotesAdapter(
         holder.itemView.setOnClickListener {
             val intent = Intent(holder.itemView.context, NoteActivity::class.java).apply {
                 putExtra("NOTE_ID", note.id)
+                putExtra("NOTE_PINNED", note.pinned)
                 putExtra("NOTE_ARCHIVED", note.archived)
                 putExtra("NOTE_TITLE", note.title)
                 putExtra("NOTE_CONTENT", note.content)

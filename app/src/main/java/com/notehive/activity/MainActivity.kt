@@ -40,11 +40,23 @@ class MainActivity : AppCompatActivity() {
                     context = this,
                     anchor = view,
                     note = note,
+                    onPinnedToggled = { updatedNote ->
+                        CoroutineScope(Dispatchers.IO).launch {
+                            NoteDatabase.getDatabase(this@MainActivity).noteDao().insertOrUpdate(updatedNote)
+                        }
+                        invalidateOptionsMenu()
+                        Toast.makeText(
+                            this,
+                            if (updatedNote.pinned) "Note pinned" else "Note unpinned",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    },
                     onArchiveToggled = { updatedNote ->
                         CoroutineScope(Dispatchers.IO).launch {
                             val noteDao = NoteDatabase.getDatabase(this@MainActivity).noteDao()
                             noteDao.insertOrUpdate(updatedNote)
                         }
+                        invalidateOptionsMenu()
                         Toast.makeText(
                             this,
                             if (updatedNote.archived) "Note archived" else "Note unarchived",

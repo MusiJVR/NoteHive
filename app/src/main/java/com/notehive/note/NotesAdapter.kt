@@ -11,7 +11,10 @@ import com.notehive.activity.NoteActivity
 import org.threeten.bp.LocalDateTime
 import org.threeten.bp.format.DateTimeFormatter
 
-class NotesAdapter(private val notes: List<Note>) : RecyclerView.Adapter<NotesAdapter.NoteViewHolder>() {
+class NotesAdapter(
+    private val notes: List<Note>,
+    private val onLongClick: (Note, View) -> Unit
+) : RecyclerView.Adapter<NotesAdapter.NoteViewHolder>() {
 
     class NoteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val title: TextView = itemView.findViewById(R.id.noteTitle)
@@ -41,6 +44,11 @@ class NotesAdapter(private val notes: List<Note>) : RecyclerView.Adapter<NotesAd
                 putExtra("NOTE_CONTENT", note.content)
             }
             holder.itemView.context.startActivity(intent)
+        }
+
+        holder.itemView.setOnLongClickListener {
+            onLongClick(note, holder.itemView)
+            true
         }
     }
 

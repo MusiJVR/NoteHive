@@ -4,7 +4,7 @@
         android:id="@+id/action_pin"
         android:title="@string/pin" />
     <item
-        android:id="@+id/action_add_to_archive"
+        android:id="@+id/action_archive"
         android:title="@string/add_to_archive" />
     <item
         android:id="@+id/action_delete"

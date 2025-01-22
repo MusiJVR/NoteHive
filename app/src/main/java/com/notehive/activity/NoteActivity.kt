@@ -2,11 +2,11 @@ package com.notehive.activity
 
 import android.os.Bundle
 import android.widget.ImageButton
-import android.widget.PopupMenu
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.notehive.R
+import com.notehive.menu.MenuHelper
 import com.notehive.note.Note
 import com.notehive.note.NoteDatabase
 import com.notehive.util.LanguageManager
@@ -48,53 +48,32 @@ class NoteActivity : AppCompatActivity() {
 
         val moreButton: ImageButton = findViewById(R.id.moreButton)
         moreButton.setOnClickListener { view ->
-            val popupMenu = PopupMenu(this, view)
-
-            menuInflater.inflate(R.menu.more_menu, popupMenu.menu)
-
-            val archiveMenuItem = popupMenu.menu.findItem(R.id.action_add_to_archive)
-            archiveMenuItem.title = if (originalNote?.archived == true) {
-                getString(R.string.remove_from_archive)
-            } else {
-                getString(R.string.add_to_archive)
-            }
-
-            popupMenu.setOnMenuItemClickListener { item ->
-                when (item.itemId) {
-                    R.id.action_pin -> {
-                        Toast.makeText(this, "Note pinned", Toast.LENGTH_SHORT).show()
-                        true
+            MenuHelper.showPopupMenu(
+                context = this,
+                anchor = view,
+                note = originalNote,
+                onArchiveToggled = { updatedNote ->
+                    originalNote = updatedNote
+                    CoroutineScope(Dispatchers.IO).launch {
+                        NoteDatabase.getDatabase(this@NoteActivity).noteDao().insertOrUpdate(updatedNote)
                     }
-                    R.id.action_add_to_archive -> {
-                        toggleArchiveState()
-                        true
+                    invalidateOptionsMenu()
+                    Toast.makeText(
+                        this,
+                        if (originalNote?.archived == true) "Note archived" else "Note unarchived",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                },
+                onDelete = {
+                    originalNote?.let { note ->
+                        CoroutineScope(Dispatchers.IO).launch {
+                            NoteDatabase.getDatabase(this@NoteActivity).noteDao().delete(note)
+                        }
+                        Toast.makeText(this, "Note deleted", Toast.LENGTH_SHORT).show()
+                        finish()
                     }
-                    R.id.action_delete -> {
-                        deleteNoteAndFinish()
-                        true
-                    }
-                    else -> false
                 }
-            }
-
-            popupMenu.show()
-        }
-    }
-
-    private fun toggleArchiveState() {
-        originalNote?.let { note ->
-            val newArchivedState = !note.archived
-            val updatedNote = note.copy(archived = newArchivedState)
-
-            CoroutineScope(Dispatchers.IO).launch {
-                val noteDao = NoteDatabase.getDatabase(this@NoteActivity).noteDao()
-                noteDao.insertOrUpdate(updatedNote)
-            }
-
-            originalNote = updatedNote
-            invalidateOptionsMenu()
-
-            Toast.makeText(this, if (originalNote?.archived == true) "Note archived" else "Note unarchived", Toast.LENGTH_SHORT).show()
+            )
         }
     }
 
@@ -130,16 +109,5 @@ class NoteActivity : AppCompatActivity() {
         CoroutineScope(Dispatchers.IO).launch {
             noteDao.insertOrUpdate(note)
         }
-    }
-
-    private fun deleteNoteAndFinish() {
-        originalNote?.let { note ->
-            val noteDao = NoteDatabase.getDatabase(this).noteDao()
-            CoroutineScope(Dispatchers.IO).launch {
-                noteDao.delete(note)
-            }
-            Toast.makeText(this, "Note deleted", Toast.LENGTH_SHORT).show()
-        }
-        finish()
     }
 }

@@ -13,7 +13,7 @@ import org.threeten.bp.LocalDateTime
 import org.threeten.bp.format.DateTimeFormatter
 
 class NotesAdapter(
-    private val notes: List<Note>,
+    private var notes: List<Note>,
     private val onLongClick: (Note, View) -> Unit
 ) : RecyclerView.Adapter<NotesAdapter.NoteViewHolder>() {
 
@@ -62,4 +62,9 @@ class NotesAdapter(
     }
 
     override fun getItemCount(): Int = notes.size
+
+    fun submitList(newNotes: List<Note>) {
+        notes = newNotes
+        notifyDataSetChanged()
+    }
 }

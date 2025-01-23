@@ -6,6 +6,8 @@
     <string name="theme">Thème</string>
     <string name="language">Langue</string>
     <string name="back">Retour</string>
+    <string name="search">Recherche</string>
+    <string name="close">Fermer</string>
     <string name="note_title">Titre</string>
     <string name="menu">Menu</string>
     <string name="pin">Épingle</string>
@@ -13,6 +15,7 @@
     <string name="add_to_archive">Ajouter aux archives</string>
     <string name="remove_from_archive">Supprimer des archives</string>
     <string name="delete">Supprimer</string>
+    <string name="enter_title">Entrez le titre de la note...</string>
     <string name="enter_text">Entrez le texte de la note...</string>
     <string name="note_text">Texte...</string>
     <string name="note_date">Date</string>

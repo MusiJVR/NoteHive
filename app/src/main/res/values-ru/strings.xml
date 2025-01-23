@@ -6,6 +6,8 @@
     <string name="theme">Тема</string>
     <string name="language">Язык</string>
     <string name="back">Назад</string>
+    <string name="search">Поиск</string>
+    <string name="close">Закрыть</string>
     <string name="note_title">Заголовок</string>
     <string name="menu">Меню</string>
     <string name="pin">Закрепить</string>
@@ -13,6 +15,7 @@
     <string name="add_to_archive">Добавить в архив</string>
     <string name="remove_from_archive">Убрать из архива</string>
     <string name="delete">Удалить</string>
+    <string name="enter_title">Введите название заметки...</string>
     <string name="enter_text">Введите текст заметки...</string>
     <string name="note_text">Текст...</string>
     <string name="note_date">Дата</string>

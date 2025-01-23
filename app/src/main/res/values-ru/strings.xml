@@ -24,6 +24,10 @@
     <string name="note_archived">Заметка добавлена в архив</string>
     <string name="note_unarchived">Заметка убрана из архива</string>
     <string name="note_deleted">Заметка удалена</string>
+    <string name="theme_applied">Примененная тема:</string>
+    <string name="theme_light">Светлая</string>
+    <string name="theme_dark">Темная</string>
+    <string name="theme_green">Зеленая</string>
     <string name="language_english">Английский</string>
     <string name="language_russian">Русский</string>
     <string name="language_german">Немецкий</string>

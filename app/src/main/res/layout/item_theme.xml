@@ -13,16 +13,33 @@
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:orientation="vertical"
-        android:padding="16dp"
+        android:gravity="center_horizontal"
+        android:padding="12dp"
         android:background="?attr/noteBackground">
 
         <LinearLayout
             android:id="@+id/themeColorBlock"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.7"
+            android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?attr/sideButtonColor"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp" />
+
+        <RadioButton
+            android:id="@+id/themeRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:buttonTint="?attr/centralButtonColor"
+            android:gravity="center"
+            android:minWidth="0dp"
+            android:minHeight="0dp" />
 
     </LinearLayout>
 

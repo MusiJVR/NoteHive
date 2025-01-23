@@ -20,16 +20,17 @@ class ThemeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_theme)
 
         val themes = listOf(
-            ThemeItem("Light", ThemeManager.THEME_LIGHT),
-            ThemeItem("Dark", ThemeManager.THEME_DARK),
-            ThemeItem("Green", ThemeManager.THEME_GREEN)
+            ThemeItem(getText(R.string.theme_light).toString(), ThemeManager.THEME_LIGHT),
+            ThemeItem(getText(R.string.theme_dark).toString(), ThemeManager.THEME_DARK),
+            ThemeItem(getText(R.string.theme_green).toString(), ThemeManager.THEME_GREEN)
         )
 
         val recyclerView = findViewById<RecyclerView>(R.id.themeRecyclerView)
         recyclerView.layoutManager = GridLayoutManager(this, 2)
+
         recyclerView.adapter = ThemeAdapter(themes) { theme ->
             ThemeManager.saveTheme(this, theme.themeKey)
-            Toast.makeText(this, "Theme applied: ${theme.name}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, String.format("%s %s", getText(R.string.theme_applied), theme.name), Toast.LENGTH_SHORT).show()
             MainActivity.instance?.recreate()
             SettingsActivity.instance?.recreate()
             recreate()

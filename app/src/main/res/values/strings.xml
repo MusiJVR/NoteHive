@@ -24,6 +24,10 @@
     <string name="note_archived">Note add to archive</string>
     <string name="note_unarchived">Note remove from archive</string>
     <string name="note_deleted">Note deleted</string>
+    <string name="theme_applied">Theme applied:</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="theme_green">Green</string>
     <string name="language_english">English</string>
     <string name="language_russian">Russian</string>
     <string name="language_german">German</string>

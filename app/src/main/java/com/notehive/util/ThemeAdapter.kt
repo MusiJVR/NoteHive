@@ -3,6 +3,7 @@ package com.notehive.util
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RadioButton
 import androidx.recyclerview.widget.RecyclerView
 import com.notehive.R
 
@@ -25,10 +26,13 @@ class ThemeAdapter(
 
     class ThemeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val themeColorBlock: View = itemView.findViewById(R.id.themeColorBlock)
+        private val radioButton: RadioButton = itemView.findViewById(R.id.themeRadioButton)
 
         fun bind(theme: ThemeItem, onThemeClick: (ThemeItem) -> Unit) {
             themeColorBlock.setBackgroundColor(getThemeColor(theme.themeKey))
+            radioButton.isChecked = ThemeManager.getCurrentTheme(itemView.context) == theme.themeKey
             itemView.setOnClickListener { onThemeClick(theme) }
+            radioButton.setOnClickListener { onThemeClick(theme) }
         }
 
         private fun getThemeColor(themeKey: String): Int {

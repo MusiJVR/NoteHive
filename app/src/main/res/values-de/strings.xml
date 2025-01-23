@@ -24,6 +24,10 @@
     <string name="note_archived">Notiz zum Archiv hinzugefügt</string>
     <string name="note_unarchived">Notiz aus dem Archiv entfernt</string>
     <string name="note_deleted">Notiz gelöscht</string>
+    <string name="theme_applied">Thema angewendet:</string>
+    <string name="theme_light">Hell</string>
+    <string name="theme_dark">Dunkel</string>
+    <string name="theme_green">Grün</string>
     <string name="language_english">Englisch</string>
     <string name="language_russian">Russisch</string>
     <string name="language_german">Deutsch</string>

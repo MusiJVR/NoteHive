@@ -39,9 +39,10 @@
         android:background="?attr/viewSeparator"
         android:layout_marginBottom="16dp" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/languageRecyclerView"
+    <RadioGroup
+        android:id="@+id/languageRadioGroup"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
 
 </LinearLayout>

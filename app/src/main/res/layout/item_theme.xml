@@ -28,7 +28,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="?attr/sideButtonColor"
+            android:background="?attr/centralButtonColor"
             android:layout_marginTop="6dp"
             android:layout_marginBottom="6dp" />
 
@@ -36,7 +36,7 @@
             android:id="@+id/themeRadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:buttonTint="?attr/centralButtonColor"
+            app:buttonTint="?attr/radioButtonColor"
             android:gravity="center"
             android:minWidth="0dp"
             android:minHeight="0dp" />

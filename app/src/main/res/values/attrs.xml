@@ -5,6 +5,7 @@
         <attr name="noteBackground" format="color" />
         <attr name="sideButtonColor" format="color" />
         <attr name="centralButtonColor" format="color" />
+        <attr name="radioButtonColor" format="color" />
         <attr name="viewSeparator" format="color" />
         <attr name="textColorContent" format="color" />
         <attr name="secondaryTextColor" format="color" />

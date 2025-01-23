@@ -2,10 +2,9 @@ package com.notehive.activity
 
 import android.os.Bundle
 import android.widget.ImageButton
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.notehive.util.LanguageAdapter
 import com.notehive.util.LanguageManager
 import com.notehive.R
 import com.notehive.util.ThemeManager
@@ -22,8 +21,7 @@ class LanguageActivity : AppCompatActivity() {
             finish()
         }
 
-        val languageRecyclerView: RecyclerView = findViewById(R.id.languageRecyclerView)
-        languageRecyclerView.layoutManager = LinearLayoutManager(this)
+        val languageRadioGroup: RadioGroup = findViewById(R.id.languageRadioGroup)
 
         val languages = listOf(
             LanguageManager.LANGUAGE_ENGLISH to getString(R.string.language_english),
@@ -33,15 +31,45 @@ class LanguageActivity : AppCompatActivity() {
             LanguageManager.LANGUAGE_SPANISH to getString(R.string.language_spanish)
         )
 
-        val adapter = LanguageAdapter(languages) { selectedLanguage ->
-            LanguageManager.saveLanguage(this, selectedLanguage)
-            LanguageManager.applyLanguage(this)
+        val currentLanguage = LanguageManager.getCurrentLanguage(this)
 
-            MainActivity.instance?.recreate()
-            SettingsActivity.instance?.recreate()
-            recreate()
+        for ((code, name) in languages) {
+            val radioButton = RadioButton(this).apply {
+                layoutParams = RadioGroup.LayoutParams(
+                    RadioGroup.LayoutParams.WRAP_CONTENT,
+                    RadioGroup.LayoutParams.WRAP_CONTENT
+                )
+                text = name
+                textSize = 18f
+                setTextColor(getColorFromAttr(android.R.attr.textColor))
+                isChecked = code == currentLanguage
+                gravity = android.view.Gravity.CENTER
+                buttonTintList = getColorStateListFromAttr(R.attr.radioButtonColor)
+
+                setOnClickListener {
+                    LanguageManager.saveLanguage(this@LanguageActivity, code)
+                    LanguageManager.applyLanguage(this@LanguageActivity)
+
+                    MainActivity.instance?.recreate()
+                    SettingsActivity.instance?.recreate()
+                    recreate()
+                }
+            }
+            languageRadioGroup.addView(radioButton)
         }
+    }
 
-        languageRecyclerView.adapter = adapter
+    private fun getColorFromAttr(attr: Int): Int {
+        val typedArray = theme.obtainStyledAttributes(intArrayOf(attr))
+        return typedArray.use {
+            it.getColor(0, 0)
+        }
+    }
+
+    private fun getColorStateListFromAttr(attr: Int): android.content.res.ColorStateList? {
+        val typedValue = android.util.TypedValue()
+        val theme = theme
+        theme.resolveAttribute(attr, typedValue, true)
+        return getColorStateList(typedValue.resourceId)
     }
 }

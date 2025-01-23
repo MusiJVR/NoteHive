@@ -7,6 +7,7 @@
         <item name="android:itemBackground">?attr/noteBackground</item>
         <item name="sideButtonColor">@color/dark_charcoal</item>
         <item name="centralButtonColor">@color/davys_grey</item>
+        <item name="radioButtonColor">@color/sonic_silver</item>
         <item name="viewSeparator">@color/dark_grey</item>
         <item name="android:fillColor">@color/default_ic</item>
         <item name="android:textColor">@color/white</item>
@@ -22,6 +23,7 @@
         <item name="android:itemBackground">?attr/noteBackground</item>
         <item name="sideButtonColor">@color/bright_gray</item>
         <item name="centralButtonColor">@color/chinese_white</item>
+        <item name="radioButtonColor">@color/chinese_silver</item>
         <item name="viewSeparator">@color/bright_gray</item>
         <item name="android:fillColor">@color/black</item>
         <item name="android:textColor">@color/black</item>
@@ -37,6 +39,7 @@
         <item name="android:itemBackground">?attr/noteBackground</item>
         <item name="sideButtonColor">@color/dark_charcoal</item>
         <item name="centralButtonColor">@color/davys_grey</item>
+        <item name="radioButtonColor">@color/sonic_silver</item>
         <item name="viewSeparator">@color/dark_grey</item>
         <item name="android:fillColor">@color/default_ic</item>
         <item name="android:textColor">@color/white</item>
@@ -52,6 +55,7 @@
         <item name="android:itemBackground">?attr/noteBackground</item>
         <item name="sideButtonColor">@color/black_сhocolate</item>
         <item name="centralButtonColor">@color/pine_tree</item>
+        <item name="radioButtonColor">@color/dark_moss_green</item>
         <item name="viewSeparator">@color/grey</item>
         <item name="android:fillColor">@color/default_ic</item>
         <item name="android:textColor">@color/white</item>

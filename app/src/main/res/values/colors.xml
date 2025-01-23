@@ -6,12 +6,15 @@
     <color name="cultured">#F6F6F6</color>
     <color name="bright_gray">#ECECEC</color>
     <color name="chinese_white">#E1E1E1</color>
+    <color name="chinese_silver">#C7C7C7</color>
     <color name="dark_grey">#212121</color>
     <color name="grey">#424242</color>
     <color name="dark_charcoal">#333333</color>
     <color name="davys_grey">#555555</color>
+    <color name="sonic_silver">#767676</color>
     <color name="olive_drab">#263218</color>
     <color name="kombu_green">#344320</color>
     <color name="pine_tree">#283718</color>
+    <color name="dark_moss_green">#3E5726</color>
     <color name="black_сhocolate">#1A2210</color>
 </resources>

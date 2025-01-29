@@ -51,6 +51,7 @@ class NotesAdapter(
                 putExtra("NOTE_ARCHIVED", note.archived)
                 putExtra("NOTE_TITLE", note.title)
                 putExtra("NOTE_CONTENT", note.content)
+                putExtra("NOTE_TIMESTAMP", note.timestamp)
             }
             holder.itemView.context.startActivity(intent)
         }

@@ -36,9 +36,10 @@ class NoteActivity : AppCompatActivity() {
         val noteArchived = intent.getBooleanExtra("NOTE_ARCHIVED", false)
         val noteTitle = intent.getStringExtra("NOTE_TITLE") ?: ""
         val noteContent = intent.getStringExtra("NOTE_CONTENT") ?: ""
+        val noteTimestamp = intent.getStringExtra("NOTE_TIMESTAMP") ?: LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME)
 
         originalNote = if (noteId != -1L) {
-            Note(noteId, notePinned, noteArchived, noteTitle, noteContent, "")
+            Note(noteId, notePinned, noteArchived, noteTitle, noteContent, noteTimestamp)
         } else null
 
         titleView.text = noteTitle
@@ -99,8 +100,10 @@ class NoteActivity : AppCompatActivity() {
                 finish()
                 return
             }
-            title = "Note"
+            title = getText(R.string.note).toString()
         }
+
+        val oldTimestamp = originalNote?.timestamp ?: LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME)
 
         val currentNote = Note(
             id = originalNote?.id ?: 0,
@@ -108,7 +111,7 @@ class NoteActivity : AppCompatActivity() {
             archived = originalNote?.archived ?: false,
             title = title,
             content = content,
-            timestamp = LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME)
+            timestamp = if (title != originalNote?.title || content != originalNote?.content) LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME) else oldTimestamp
         )
 
         if (currentNote != originalNote) {

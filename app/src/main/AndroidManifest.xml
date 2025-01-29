@@ -26,6 +26,7 @@
         <activity android:name=".activity.SettingsActivity" />
         <activity android:name=".activity.ThemeActivity" />
         <activity android:name=".activity.LanguageActivity" />
+        <activity android:name=".activity.AboutApplicationActivity" />
     </application>
 
 </manifest>

@@ -1,10 +1,14 @@
 <resources>
     <string name="app_name">NoteHive</string>
+    <string name="version">Версия: %1$s</string>
     <string name="archive">Архив</string>
     <string name="add_note">Создать заметку</string>
     <string name="settings">Настройки</string>
     <string name="theme">Тема</string>
     <string name="language">Язык</string>
+    <string name="about_application">О приложении</string>
+    <string name="github_repo"><u>Исходный код на GitHub</u></string>
+    <string name="mit_license"><u>Распространяется по лицензии MIT</u></string>
     <string name="back">Назад</string>
     <string name="search">Поиск</string>
     <string name="close">Закрыть</string>

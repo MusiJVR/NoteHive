@@ -33,5 +33,9 @@ class SettingsActivity : AppCompatActivity() {
         findViewById<CardView>(R.id.cardLanguage).setOnClickListener {
             startActivity(Intent(this, LanguageActivity::class.java))
         }
+
+        findViewById<CardView>(R.id.cardAboutApplication).setOnClickListener {
+            startActivity(Intent(this, AboutApplicationActivity::class.java))
+        }
     }
 }

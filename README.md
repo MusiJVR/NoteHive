@@ -1,6 +1,6 @@
 <p align="center">
    <a href="https://github.com/MusiJVR/NoteHive" target="_blank">
-      <img width="180" height="180" src="https://github.com/MusiJVR/FlectoManager/blob/main/docs/icon.png" alt="NoteHive" style="border-radius: 25px">
+      <img width="180" height="180" src="https://github.com/MusiJVR/NoteHive/blob/main/docs/icon.png" alt="NoteHive" style="border-radius: 25px">
    </a>
 </p>
 
@@ -16,9 +16,9 @@
 </p>
 
 <p align="center">
-    <img src="https://github.com/MusiJVR/FlectoManager/blob/main/docs/screenshot1.png" width="250" style="margin: 10px">
-    <img src="https://github.com/MusiJVR/FlectoManager/blob/main/docs/screenshot2.png" width="250" style="margin: 10px">
-    <img src="https://github.com/MusiJVR/FlectoManager/blob/main/docs/screenshot3.png" width="250" style="margin: 10px">
+    <img src="https://github.com/MusiJVR/NoteHive/blob/main/docs/screenshot1.png" width="250" style="margin: 10px">
+    <img src="https://github.com/MusiJVR/NoteHive/blob/main/docs/screenshot2.png" width="250" style="margin: 10px">
+    <img src="https://github.com/MusiJVR/NoteHive/blob/main/docs/screenshot3.png" width="250" style="margin: 10px">
 </p>
 
 ## Overview

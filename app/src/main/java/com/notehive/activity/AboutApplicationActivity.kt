@@ -7,12 +7,16 @@ import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.notehive.R
+import com.notehive.util.LanguageManager
+import com.notehive.util.ThemeManager
 
 class AboutApplicationActivity : AppCompatActivity() {
     private val GITHUB_URL = "https://github.com/MusiJVR/NoteHive"
     private val MIT_LICENSE_URL = "https://github.com/MusiJVR/NoteHive/blob/main/LICENSE.md"
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        LanguageManager.applyLanguage(this)
+        ThemeManager.applyTheme(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_about_application)
 

@@ -91,6 +91,11 @@ class NoteActivity : AppCompatActivity() {
         }
     }
 
+    override fun onPause() {
+        super.onPause()
+        finishWithSave()
+    }
+
     private fun finishWithSave() {
         var title = titleView.text.toString().trim()
         val content = contentView.text.toString().trim()
